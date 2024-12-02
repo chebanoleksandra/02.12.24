@@ -12,4 +12,20 @@ int main()
 	myTree.Insert(6);
 	myTree.Insert(3);
 	myTree.Print();
+
+	int key;
+	cout << "Input key: ";
+	cin >> key;
+
+	/*if (myTree.Find(key))
+	{
+		cout << "true" << endl;
+	}
+	else
+	{
+		cout << "false" << endl;
+	}*/
+
+	myTree.Erase(key);
+	myTree.Print();
 }

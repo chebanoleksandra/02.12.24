@@ -19,8 +19,12 @@ private:
     Node* root;
     void Insert(Node*& node, int value);
     void Print(Node* node) const;
+    bool Find(Node* node, int value) const;
+    void Erase(Node* node, int value);
 public:
     Tree() :root(nullptr) {};
     void Insert(int value);
     void Print() const;
+    bool Find(int value) const;
+    void Erase(int value);
 };
