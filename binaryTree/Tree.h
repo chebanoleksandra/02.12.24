@@ -1,5 +1,4 @@
 #pragma once
-//binary search tree
 class Tree
 {
     class Node
@@ -16,11 +15,12 @@ class Tree
             right(nullptr) {};
         Node(int value, Node* right, Node* left);
     };
+private:
     Node* root;
     void Insert(Node* node, int value);
     void Print(Node* node) const;
 public:
-    Tree();
+    Tree() :root(nullptr) {};
     void Insert(int value);
     void Print() const;
 };

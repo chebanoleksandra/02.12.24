@@ -9,31 +9,23 @@ Tree::Node::Node(int value, Node* right, Node* left)
 
 void Tree::Insert(Node* node, int value)
 {
-    if (node == nullptr)
+    
+    if (!node)
     {
-        Node* new_node = new Node(value);
-        node = new_node;
         return;
     }
-    if (node->value > value)
+    if (value > node->value)
     {
         Insert(node->right, value);
     }
-    else
+    else if (value < node->value)
     {
         Insert(node->left, value);
     }
 }
 
-Tree::Tree()
-    :root(nullptr) {}
-
-
 void Tree::Print(Node* node) const{
-    if (node == nullptr)
-    {
-        return;
-    }
+    if (!node) return;
     Print(node->left);
     cout << node->value << " ";
     Print(node->right);
@@ -41,7 +33,14 @@ void Tree::Print(Node* node) const{
 
 void Tree::Insert(int value)
 {
-    Insert(root, value);
+    if (root == nullptr)
+    {
+        root = new Node(value);
+    }
+    else
+    {
+        Insert(root, value);
+    }
 }
 
 void Tree::Print() const {

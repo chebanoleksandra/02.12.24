@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+	//binary search tree
 	Tree myTree;
 	myTree.Insert(5);
 	myTree.Insert(1);
