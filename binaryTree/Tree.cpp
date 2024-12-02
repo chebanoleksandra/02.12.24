@@ -7,21 +7,18 @@ Tree::Node::Node(int value, Node* right, Node* left)
     right(right),
     left(left) {}
 
-void Tree::Insert(Node* node, int value)
+void Tree::Insert(Node*& node, int value)
 {
-    
+
     if (!node)
     {
+        node = new Node(value);
         return;
     }
     if (value > node->value)
-    {
         Insert(node->right, value);
-    }
     else if (value < node->value)
-    {
         Insert(node->left, value);
-    }
 }
 
 void Tree::Print(Node* node) const{

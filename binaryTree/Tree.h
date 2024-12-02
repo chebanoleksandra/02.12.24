@@ -17,7 +17,7 @@ class Tree
     };
 private:
     Node* root;
-    void Insert(Node* node, int value);
+    void Insert(Node*& node, int value);
     void Print(Node* node) const;
 public:
     Tree() :root(nullptr) {};
